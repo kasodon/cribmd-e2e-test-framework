@@ -1,15 +1,19 @@
 import { Given} from 'cucumber';
-import loginPage from '../pageobjects/herokuapp-login.page';
-import yahooPage from '../pageobjects/yahoo-search.page';
+import patientLogin from '../pageobjects/patient-login.page';
+import PatientBookAppointment from '../pageobjects/patient-book-appointment.page';
+import PatientSubscribe from '../pageobjects/patient-subscribe.page';
 
-
-// *** belongs to Yahoo serch feature
-Given(/^I am on the search page$/, function () {
-  yahooPage.open();
-  browser.getTitle().should.equal('Yahoo Search - Web Search');
+Given('I open CribMD sandbox login page', function () {
+  // Write code here that turns the phrase above into concrete actions
+  patientLogin.open();     // navigating to login page
 });
 
-Given('I am on the herokuapp login page', function () {
+Given('I open CribMD sandbox login page on browser', function () {
   // Write code here that turns the phrase above into concrete actions
-  loginPage.open();     // navigating to login page
+  PatientBookAppointment.open();     // navigating to login page
+});
+
+Given('I open CribMD sandbox login page to subscribe', function () {
+  // Write code here that turns the phrase above into concrete actions
+  PatientSubscribe.open();     // navigating to login page
 });

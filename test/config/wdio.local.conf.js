@@ -5,13 +5,13 @@ exports.config = {
     ...{
       services: ['selenium-standalone'],
       capabilities: [
-          {
-            maxInstances: 5,
-            browserName: 'chrome',
-            'goog:chromeOptions': {
-                //headless: true
-            }
-        },
+        //   {
+        //     maxInstances: 5,
+        //     browserName: 'chrome',
+        //     'goog:chromeOptions': {
+        //         //headless: true
+        //     }
+        // },
         {
           maxInstances: 5,
           browserName: 'firefox',

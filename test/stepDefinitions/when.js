@@ -1,18 +1,19 @@
 import {Given, When, Then} from 'cucumber';
-import loginPage from '../pageobjects/herokuapp-login.page';
-import yahooPage from '../pageobjects/yahoo-search.page';
+import patientLogin from '../pageobjects/patient-login.page';
+import PatientBookAppointment from '../pageobjects/patient-book-appointment.page';
+import PatientSubscribe from '../pageobjects/patient-subscribe.page';
 
-
-When(/^I enter "([^"]*)" into the search box$/, function (arg1) {
-    yahooPage.enterText(arg1);
-    yahooPage.searchInput.getValue().should.equal(arg1);
+// *** belongs to patient-loging  feature
+When(/^I login with username and password "([^"]*)" "([^"]*)" into the text box for patient$/, function (arg1, arg2) {
+    patientLogin.login(arg1, arg2);    // entering user name, password and and submiting the page
 });
 
-When(/^I click the search button$/, function () {
-    yahooPage.search();
+// *** belongs to patient-booking  feature
+When(/^I enter correct login details "([^"]*)" "([^"]*)" & I click on the login button$/, function (arg1, arg2) {
+    PatientBookAppointment.login(arg1, arg2);    // entering user name, password and and submiting the page
 });
 
-// *** belongs to ta-loging  feature
-When(/^I login with username and password "([^"]*)" "([^"]*)" into the text box$/, function (arg1, arg2) {
-    loginPage.login(arg1, arg2);    // entering user name, password and and submiting the page
+// *** belongs to patient-booking  feature
+When(/^I enter correct login details "([^"]*)" "([^"]*)" & and click login button$/, function (arg1, arg2) {
+    PatientSubscribe.login(arg1, arg2);    // entering user name, password and and submiting the page
 });
